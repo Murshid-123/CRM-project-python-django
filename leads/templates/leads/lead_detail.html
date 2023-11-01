@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
     <a href="{% url 'leads:lead-list' %}">Go back to leads</a>
     <hr />
     <h1>This is the details of {{ lead.first_name }}</h1>
@@ -14,5 +9,4 @@
     <hr />
     <a href="{% url 'leads:lead-update' lead.pk %}">Update</a>
     <a href="{% url 'leads:lead-delete' lead.pk %}">Delete</a>
-</body>
-</html>
+{% endblock content %}

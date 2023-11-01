@@ -1,32 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <style>
-        .lead{
-            padding: 10px 6px;
-            background-color: #f6f6f6;
-            margin-bottom: 6px;
-        }
-    </style>
-</head>
-<body>
+{% extends "base.html" %}
 
+{% block content %}
     <a href="{% url 'leads:lead-create' %}">Create a new lead</a>
     <hr />
-    <h1> This is all of our leads</h1>
-                
+    <h1>This is all of our leads</h1>
     {% for lead in leads %}
         <div class="lead">
-            <a href="{% url 'leads:lead-detail' lead.pk %}">{{lead.first_name}} {{lead.last_name}} </a>. Age:{{lead.age}} 
+            <a href="{% url 'leads:lead-detail' lead.pk %}">{{ lead.first_name }} {{ lead.last_name }}</a>. Age: {{ lead.age }}
         </div>
     {% endfor %}
+{% endblock content %}
 
 
     
     
-    
-</body>
-</html>
+ 
