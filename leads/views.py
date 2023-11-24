@@ -4,7 +4,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 from django.views import generic
 from .models import Lead, Agent
-from .forms import LeadForm, LeadModelForm,CustomUserCreationForm
+from .forms import LeadForm, LeadModelForm,CustomUserCreationForm,AssignAgentForm
 from agents.mixins import OrganisorAndLoginRequiredMixin
 
 # CRUD+L - Create, Retrieve, Update and Delete + List
